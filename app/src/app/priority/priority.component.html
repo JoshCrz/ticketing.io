@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="priority">
+  <ng-container *ngSwitchCase="1">
+    <div class="badge badge-danger">
+      High <i class="fas fa-exclamation-triangle mx-1"></i>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <div class="badge badge-warning">
+      Medium
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="3">
+    <div class="badge badge-light">
+      Low
+    </div>
+  </ng-container>  
+</ng-container>

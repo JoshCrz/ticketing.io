@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Lato", Helvetica;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.contensis {
+  color: #e9654c;
+}
+
+.contensis-bg {
+  background-color: #e9654c;
+}
+
+.fade-in {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.load-mask {
+  padding: 14px;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 5;
+  text-align: center;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.flat {
+  background: rgba(255, 255, 255, 1);
+}

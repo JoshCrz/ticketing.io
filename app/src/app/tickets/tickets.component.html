@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header bg-dark text-white">
+    <span class="card-title m-0 h3">
+      Live Tickets
+    </span>
+    <span class="float-right">
+      <button class="btn btn-primary" [routerLink]="['new-ticket']">New ticket</button>
+    </span>
+  </div>
+  <div class="card-body p-3">
+
+    <ng-container *ngIf="tickets; else fb">
+      <div class="d-flex flex-row row border-bottom p-2 align-items-center fade-in" *ngFor="let ticket of tickets">
+        <div class="col-1">
+          <div class="badge" [ngClass]="[ticket.status == 1 ? 'badge-success' : 'badge-secondary']">
+            {{ticket.status == 1 ? 'Open' : 'Closed'}}
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-8">
+          <b>{{ticket.subject}}</b>          
+          <p class="m-0 small text-muted">
+            {{ticket.description}}
+          </p>
+        </div>
+        <div class="col-4 col-sm-4 col-md-2 col-lg-1 text-center">
+          <app-client [size]="'sm'" [clientId]="ticket.clientId"></app-client>
+        </div>
+        <div class="col-4 col-sm-4 col-md-2 col-lg-1 text-center">
+          <app-priority [priority]="ticket.priority">
+
+          </app-priority>
+        </div>
+        <div class="col-4 col-sm-4 col-md-2 col-lg-1 text-right">
+          <button class="btn btn-primary" [routerLink]="['ticket', ticket.id]">
+            Open
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #fb>
+      <ng-container *ngIf="noTickets; else fb">
+        <p class="m-0">No tickets to show. Good Work!</p>                
+      </ng-container>
+      <ng-template #fb>        
+        <div class="load-mask flat">
+          <i class="fas fa-spinner fa-spin h1"></i>            
+        </div>        
+      </ng-template>
+    </ng-template>
+
+  </div>
+</div>

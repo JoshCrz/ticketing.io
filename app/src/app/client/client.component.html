@@ -1,0 +1,6 @@
+<ng-container *ngIf="size && size == 'sm'; else default">
+  <img src="assets/{{clientId}}.png" style="max-width: 40px;" />
+</ng-container>
+<ng-template #default>
+  <img src="assets/{{clientId}}.png" style="max-width: 80px;" />
+</ng-template>
