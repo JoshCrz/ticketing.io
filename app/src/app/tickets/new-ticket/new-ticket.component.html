@@ -26,7 +26,7 @@
                             <label>Subject <span class="text-danger mx-1">*</span></label>                    
                             <input type="text" formControlName="subject"
                              class="form-control" placeholder="Keyboard needs replacing..." /> 
-                             <p class="small text-danger" *ngIf="(newTicketForm.submitted && !newTicketForm.value.subject) || (newTicketForm.controls.subject.dirty && !newTicketForm.controls.subject.value)">
+                             <p class="small text-danger" *ngIf="(submitted && !newTicketForm.value.subject) || (newTicketForm.controls.subject.dirty && !newTicketForm.controls.subject.value)">
                                  This is a required field
                              </p>
                         </div>

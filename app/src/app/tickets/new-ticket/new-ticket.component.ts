@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NewTicketComponent implements OnInit {
 
   newTicketForm: FormGroup;
+  submitted: boolean;
 
   constructor(private ticketsService: TicketsService, private router: Router) { }
 
@@ -41,7 +42,7 @@ getId(){
 
   submit = (form) => {
 
-    form.submitted = true;
+    this.submitted = true;
 
     if(form.valid){
       let data = form.value;
